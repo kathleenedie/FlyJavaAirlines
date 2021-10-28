@@ -25,7 +25,7 @@ public class FlightManagerTest {
 
     @Test
     public void canGetTotalPlaneBaggageWeight(){
-        assertEquals(200.00, plane.planeTotalPlaneBaggageWeight(plane), 0.01);
+        assertEquals(200.00, plane.planeTotalPlaneBaggageWeight(), 0.01);
     }
 
     @Test
@@ -54,6 +54,7 @@ public class FlightManagerTest {
         assertEquals(100, flightmanager.remainingBaggageWeight(flight, plane), 0.01);
     }
 
-
+    @Test
+    public void githubtest(){}
 
 }

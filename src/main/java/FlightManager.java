@@ -5,7 +5,7 @@ public class FlightManager {
     }
 
     public double passengerBaggageAllowance(Plane plane) {
-        double baggageAllowance = plane.planeTotalPlaneBaggageWeight(plane) / plane.planeCapacity();
+        double baggageAllowance = plane.planeTotalPlaneBaggageWeight() / plane.planeCapacity();
         return baggageAllowance;
     }
 
@@ -15,16 +15,17 @@ public class FlightManager {
     }
 
     public double totalFlightBaggageWeight(Flight flight, Plane plane) {
-        double totalFlightBookedBaggage = 0;
+        double total = 0;
 
         for(Passenger passenger : flight.getPassengers()){
-            totalFlightBookedBaggage = totalFlightBookedBaggage + singlePassengerTotalBaggageWeight(plane, passenger);
+            total += singlePassengerTotalBaggageWeight(plane, passenger);
         }
-        return totalFlightBookedBaggage;
+        return total;
     }
 
     public double remainingBaggageWeight(Flight flight, Plane plane) {
-        double weightAvailable = passengerBaggageAllowance(plane) - totalFlightBaggageWeight(flight, plane);
-        return weightAvailable;
+        double totalFlightWeight = totalFlightBaggageWeight(flight, plane);
+        double totalPassengerWeight = passengerBaggageAllowance(plane);
+        return plane.planeTotalPlaneBaggageWeight() - totalFlightBaggageWeight(flight, plane);
     }
 }

@@ -14,7 +14,7 @@ public class Plane {
         return planeType.getCapacity();
     }
 
-    public double planeTotalPlaneBaggageWeight(Plane plane) {
+    public double planeTotalPlaneBaggageWeight() {
         double availableWeight = planeType.getTotalWeight() / 2;
         return availableWeight;
     }

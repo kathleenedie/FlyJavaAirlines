@@ -15,4 +15,5 @@ public class Passenger {
     public int getNumberOfBags() {
         return numberOfBags;
     }
+
 }
