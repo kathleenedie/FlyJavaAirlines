@@ -54,7 +54,4 @@ public class FlightManagerTest {
         assertEquals(100, flightmanager.remainingBaggageWeight(flight, plane), 0.01);
     }
 
-    @Test
-    public void githubtest(){}
-
 }
